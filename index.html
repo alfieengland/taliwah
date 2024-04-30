@@ -83,7 +83,6 @@
           currentParticle.style.transform = "translate(" + random + "px, " + random2 + "px)";
           currentParticle.style.height = randomSize + "px";
           currentParticle.style.width = randomSize + "px";
-          console.log("move " + translate);
         }
         setTimeout(function() { moveParticles(); }, 250);
       }
@@ -163,15 +162,16 @@
 
       document.addEventListener('DOMContentLoaded', afterPageLoads);
 
+      /* When logo is clicked, zoom logo, fade to black & audio plays */
       function logoZoom() {
         console.log('It Works');
         var audio = new Audio('audio/taliwahvoice.wav');
+        audio.volume = 0.5;
         audio.play();
         setTimeout(() => {
           $("#logo-image").animate({zoom: '2000%'}, "slow");
           $("#black").animate({opacity: 1}, "slower");
-        }, 325);
-
+        }, 300);
         /* Makes particles white when fade to black happens */
         var particles = document.getElementsByClassName("particle");
         for (var i = 0; i < particles.length; i++) {

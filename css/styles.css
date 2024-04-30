@@ -1,12 +1,8 @@
 html {
   background-color: #fffbe6;
+  background: radial-gradient(circle, rgba(245,243,230,1) 0%, rgba(245,243,230,1) 47%, rgba(222,213,197,1) 72%, rgba(161,140,134,1) 91%, rgba(112,92,97,1) 100%);
   overflow-x: hidden;
   overflow-y: hidden;
-}
-
-body {
-  background: rgb(245,243,230);
-  background: radial-gradient(circle, rgba(245,243,230,1) 0%, rgba(245,243,230,1) 47%, rgba(222,213,197,1) 72%, rgba(161,140,134,1) 91%, rgba(112,92,97,1) 100%);
 }
 
 #black {

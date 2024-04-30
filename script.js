@@ -125,6 +125,7 @@ function calcSpeed(prev, next) {
 
 /* When logo is clicked, zoom logo, fade to black & audio plays */
 function logoZoom() {
+  /* To do - make this only work from home page, not on about page, otherwise can loop indefinitely */
   console.log('It Works');
   var audio = new Audio('audio/taliwahvoice.wav');
   audio.volume = 0.5;

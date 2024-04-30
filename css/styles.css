@@ -53,10 +53,10 @@ html {
   background-color: #000000;
   background: radial-gradient(circle, rgba(0,0,0,0.5) 41%, rgba(245,243,230,0) 100%);
   z-index: 999;
-  transition: transform 0.2s;
+  transition: transform 1s, opacity 0.5s;
 }
 
-#logo-s, #logo-main, #logo-image, .leaf, .particle, .ico svg {
+#logo-s, #logo-main, #logo-image, .leaf, .ico svg {
   transition-property: opacity, transform;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
@@ -67,7 +67,7 @@ html {
 }
 
 #logo-s, #logo-main, #logo-image {
-  z-index: 2;
+  z-index: 1000;
 }
 
 #logo-s {

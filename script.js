@@ -54,9 +54,11 @@ function moveParticles() {
   for (var i = 0; i < particles.length; i++) {
     var currentParticle = particles[i];
     translate += 1;
-    random = Math.floor(Math.random() * 400);
-    random2 = Math.random() * 50;
+    random = Math.floor(Math.random() * 100);
+    random2 = Math.random() * 100;
     randomSize = Math.floor(Math.random() * 5); /* Scale favors the larger number - this needs work, as they just get bigger */
+    var randomOpacity = Math.random();
+    currentParticle.style.opacity = randomOpacity;
 
     var bounding = currentParticle.getBoundingClientRect();
     /*console.log(bounding);*/
@@ -66,7 +68,7 @@ function moveParticles() {
     }
 
     if (bounding.left < 0) {
-    	// Left side is out of viewoprt
+    	// Left side is out of viewport
     }
 
     if (bounding.bottom > (window.innerHeight || document.documentElement.clientHeight)) {
@@ -85,7 +87,6 @@ function moveParticles() {
   console.log(randomSize);
   setTimeout(function() { moveParticles(); }, 100);
 }
-
 
 function makeNewPosition($container) {
     // Get viewport dimensions (remove the dimension of the div)

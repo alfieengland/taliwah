@@ -77,14 +77,13 @@
         for (var i = 0; i < particles.length; i++) {
           var currentParticle = particles[i];
           translate += 5;
-          random = Math.floor(Math.random() * 100);
-          random2 = Math.floor(Math.random() * 100);
-          randomSize = Math.floor(Math.random() * 5);
-          currentParticle.style.transform = "translate(" + random + "px, " + random2 + "px)";
-          currentParticle.style.height = randomSize + "px";
-          currentParticle.style.width = randomSize + "px";
+          random = Math.random() * 100;
+          random2 = Math.random() * 100;
+          randomSize = Math.floor(Math.random() * 5); /* Scale favors the larger number - this needs work, as they just get bigger */
+          currentParticle.style.transform = "translate(" + random + "px, " + random2 + "px)" + "scale(" + randomSize + "," + randomSize + ")";
         }
-        setTimeout(function() { moveParticles(); }, 250);
+        console.log(randomSize);
+        setTimeout(function() { moveParticles(); }, 100);
       }
 
       /* Fade out "S" logo and fade in full logo afterwards differing delays */
@@ -180,8 +179,6 @@
           currentParticle.style.backgroundColor = "#FFF";
           currentParticle.style.border = "1px solid #FFF";
         }
-        setTimeout(function() { moveParticles(); }, 250);
-
 
         setTimeout(() => {
           location.href = "about.html";

@@ -45,11 +45,6 @@ $(document).ready(function() {
   animations();
   addParticles();
   moveParticles();
-  /*addLeaves();
-  for (var i = 1; i <= 14; i++) {
-    animateDiv($('.leaf' + i));
-  }
-  leafDelay();*/
 });
 
 /* Moves particles */
@@ -58,11 +53,34 @@ function moveParticles() {
   var particles = document.getElementsByClassName("particle");
   for (var i = 0; i < particles.length; i++) {
     var currentParticle = particles[i];
-    translate += 5;
-    random = Math.random() * 100;
-    random2 = Math.random() * 100;
+    translate += 1;
+    random = Math.floor(Math.random() * 400);
+    random2 = Math.random() * 50;
     randomSize = Math.floor(Math.random() * 5); /* Scale favors the larger number - this needs work, as they just get bigger */
-    currentParticle.style.transform = "translate(" + random + "px, " + random2 + "px)" + "scale(" + randomSize + "," + randomSize + ")";
+
+    var bounding = currentParticle.getBoundingClientRect();
+    /*console.log(bounding);*/
+
+    if (bounding.top < 0) {
+    	// Top is out of viewport
+    }
+
+    if (bounding.left < 0) {
+    	// Left side is out of viewoprt
+    }
+
+    if (bounding.bottom > (window.innerHeight || document.documentElement.clientHeight)) {
+    	// Bottom is out of viewport
+    }
+
+    if (bounding.right > (window.innerWidth || document.documentElement.clientWidth)) {
+    	// Right side is out of viewport
+      /*currentParticle.style.transform = "translate(-" + window.innerWidth + "px)";*/
+      currentParticle.style.left = "0";
+      console.log("teleported");
+    } else {
+      currentParticle.style.transform = "translate(" + random + "px, " + random2 + "px)" + "scale(" + randomSize + "," + randomSize + ")";
+    }
   }
   console.log(randomSize);
   setTimeout(function() { moveParticles(); }, 100);
@@ -123,6 +141,7 @@ function logoZoom() {
     currentParticle.style.backgroundColor = "#FFF";
     currentParticle.style.border = "1px solid #FFF";
     currentParticle.style.background = "0";
+    currentParticle.style.transition = "transform 0.2s, background-color 0.3s, border 0.3s, background 0.3s";
   }
 
   setTimeout(() => {
@@ -154,12 +173,6 @@ function animations() {
     $("#logo-image").toggleClass("noTransition");
     $("#logo-main").toggleClass("noTransition");
   },4600)
-};
-
-function leafDelay() {
-  setTimeout(() => {
-    $(".leaf").toggleClass("transparent");
-  },2700)
 };
 
 /* Resize currently causes bug of image being inverted transparency on resize/load

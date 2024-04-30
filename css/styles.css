@@ -52,8 +52,8 @@ html {
   width: 3px;
   background-color: #000000;
   background: radial-gradient(circle, rgba(0,0,0,0.5) 41%, rgba(245,243,230,0) 100%);
-  z-index: 0;
-  transition: transform 0.1s;
+  z-index: 999;
+  transition: transform 0.2s;
 }
 
 #logo-s, #logo-main, #logo-image, .leaf, .particle, .ico svg {

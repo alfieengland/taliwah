@@ -1,2 +1,1 @@
-# taliwah
-Taliwah™
+# Taliwah™

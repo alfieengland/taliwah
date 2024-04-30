@@ -14,8 +14,14 @@
       <img id="logo-s" src="img/lines.png">
       <img id="logo-main" class="transparent" src="img/main.png">
       <img id="logo-image" class="transparent" src="img/logo.png">
-      <h1>ABOUT PAGE</h1>
+      <div id="black"></div>
       <script type="text/javascript">
+      /* For click animations and ting (From github javascript repo) */
+      function afterPageLoads() {
+        var heading = document.getElementById('logo-main');
+        var black = document.getElementById("black");
+        black.style.opacity = "1";
+      }
 
       function addParticles() {
         var particles = 100;
@@ -58,12 +64,26 @@
       $(document).ready(function() {
         animations();
         addParticles();
-        /*addLeaves();
-        for (var i = 1; i <= 14; i++) {
-          animateDiv($('.leaf' + i));
-        }
-        leafDelay();*/
+        moveParticles();
       });
+
+      /* Moves particles */
+      var translate = 0;
+      function moveParticles() {
+        var particles = document.getElementsByClassName("particle");
+        for (var i = 0; i < particles.length; i++) {
+          var currentParticle = particles[i];
+          translate += 5;
+          random = Math.floor(Math.random() * 100);
+          random2 = Math.floor(Math.random() * 100);
+          randomSize = Math.floor(Math.random() * 5);
+          currentParticle.style.transform = "translate(" + random + "px, " + random2 + "px)";
+          currentParticle.style.height = randomSize + "px";
+          currentParticle.style.width = randomSize + "px";
+          console.log("move " + translate);
+        }
+        setTimeout(function() { moveParticles(); }, 250);
+      }
 
       /* Fade out "S" logo and fade in full logo afterwards differing delays */
       function animations() {
@@ -137,6 +157,33 @@
         if (window.innerHeight <= 300) $("#logo-image").addClass('transparent');
         else $("#logo-image").removeClass('transparent');
       });
+
+      document.addEventListener('DOMContentLoaded', afterPageLoads);
+
+      function logoZoom() {
+        console.log('It Works');
+        var audio = new Audio('audio/taliwahvoice.wav');
+        audio.play();
+        setTimeout(() => {
+          $("#logo-image").animate({zoom: '2000%'}, "slow");
+        }, 325);
+
+        /* Makes particles white when fade to black happens */
+        var particles = document.getElementsByClassName("particle");
+        for (var i = 0; i < particles.length; i++) {
+          var currentParticle = particles[i];
+          currentParticle.style.zIndex = "999";
+          currentParticle.style.backgroundColor = "#FFF";
+          currentParticle.style.border = "1px solid #FFF";
+        }
+        setTimeout(function() { moveParticles(); }, 250);
+
+        setTimeout(() => {
+          location.href = "about.html";
+        },2000);
+      }
+
+      document.addEventListener('click', logoZoom);
       </script>
     </div>
     <!--<div class="info">

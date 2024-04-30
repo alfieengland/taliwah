@@ -169,8 +169,20 @@
         audio.play();
         setTimeout(() => {
           $("#logo-image").animate({zoom: '2000%'}, "slow");
-          $("#black").animate({opacity: 1}, "slow");
+          $("#black").animate({opacity: 1}, "slower");
         }, 325);
+
+        /* Makes particles white when fade to black happens */
+        var particles = document.getElementsByClassName("particle");
+        for (var i = 0; i < particles.length; i++) {
+          var currentParticle = particles[i];
+          currentParticle.style.zIndex = "999";
+          currentParticle.style.backgroundColor = "#FFF";
+          currentParticle.style.border = "1px solid #FFF";
+        }
+        setTimeout(function() { moveParticles(); }, 250);
+
+
         setTimeout(() => {
           location.href = "about.html";
         },2000);

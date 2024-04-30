@@ -14,7 +14,7 @@ body {
   opacity: 0;
   width: 150vw;
   height: 150vh;
-  z-index: 999; /* Always on top for fade-to-black */
+  z-index: 998; /* Always on top for fade-to-black */
 }
 
 .logo {

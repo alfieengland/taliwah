@@ -11,3 +11,12 @@
 html {
   background: radial-gradient(circle, var(--bg-1) 0%, var(--bg-2) 47%, var(--bg-3) 72%, var(--bg-4) 90%, var(--bg-5) 100%);
 }
+
+.homepage {
+  height: calc(100% / 3);
+}
+
+#logo-text {
+  text-align: center;
+  vertical-align: middle;
+}

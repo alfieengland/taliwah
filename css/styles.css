@@ -1,4 +1,13 @@
+/* CSS Variables or "Custom Properties" */
+:root {
+  /* https://www.w3schools.com/colors/colors_picker.asp If needed for BG colours */
+  --bg-1: #cedede;
+  --bg-2: #a1c8d6;
+  --bg-3: #8cd1d1;
+  --bg-4: #4bb8b8;
+  --bg-5: #38a6a6;
+}
+
 html {
-  background-color: #fffbe6;
-  background: radial-gradient(circle, rgba(245,243,230,1) 0%, rgba(245,243,230,1) 47%, rgba(222,213,197,1) 72%, rgba(161,140,134,1) 91%, rgba(112,92,97,1) 100%);
+  background: radial-gradient(circle, var(--bg-1) 0%, var(--bg-2) 47%, var(--bg-3) 72%, var(--bg-4) 90%, var(--bg-5) 100%);
 }

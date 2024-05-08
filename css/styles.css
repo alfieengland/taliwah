@@ -19,4 +19,6 @@ html {
 #logo-text {
   text-align: center;
   vertical-align: middle;
+  opacity: 0;
+  transition: opacity 3.2s ease-in-out;
 }

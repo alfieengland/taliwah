@@ -9,10 +9,12 @@
 }
 
 html {
-  background: radial-gradient(circle, var(--bg-1) 0%, var(--bg-2) 47%, var(--bg-3) 72%, var(--bg-4) 90%, var(--bg-5) 100%);
+  /*background: linear-gradient(var(--bg-1) 0%, var(--bg-2) 47%, var(--bg-3) 72%, var(--bg-4) 90%, var(--bg-5) 100%);*/
+  /*background: radial-gradient(circle, var(--bg-1) 0%, var(--bg-2) 47%, var(--bg-3) 72%, var(--bg-4) 90%, var(--bg-5) 100%);*/
+  /*background: radial-gradient(circle, #F2A341, #F27F3D, #0D0D0D)*/
 }
 
-.homepage {
+.homepage, #canvas {
   height: calc(100% / 3);
 }
 
@@ -21,4 +23,20 @@ html {
   vertical-align: middle;
   opacity: 0;
   transition: opacity 3.2s ease-in-out;
+}
+
+.row-top {
+  background-color: #0D0D0D;
+}
+
+.row-bottom {
+  background-color: #0D0D0D;
+}
+
+canvas {
+  filter: blur(20px) contrast(2);
+  width: 100%;
+  z-index: -10;
+  position: absolute;
+  left: 0;
 }

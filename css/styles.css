@@ -22,7 +22,6 @@ html {
   text-align: center;
   vertical-align: middle;
   opacity: 0;
-  transition: opacity 3.2s ease-in-out;
 }
 
 #logo-text img {
@@ -70,4 +69,9 @@ canvas {
   z-index: -10;
   position: absolute;
   left: 0;
+}
+
+/* For JS PageLoad Cinematic/Bars Increase Size */
+#logo-text, #row-top, #row-middle, #row-bottom, #canvas {
+  transition: height 1.5s ease-in-out, opacity 2.6s ease-in-out;
 }

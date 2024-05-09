@@ -30,11 +30,37 @@ html {
 }
 
 .row-top {
-  background-color: #0D0D0D;
+  padding-bottom: 5px;
 }
 
-.row-bottom {
+.row-top a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+  transition: all 0.2s ease;
+}
+
+.row-top h1 {
+  padding-top: 18px;
+}
+
+.row-top a:hover {
+  font-size: 150%;
+}
+
+.row-top, .row-bottom {
   background-color: #0D0D0D;
+  color: #fff;
+}
+
+.col-links {
+  position: relative;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+#links {
+  font-size: 210%;
 }
 
 canvas {

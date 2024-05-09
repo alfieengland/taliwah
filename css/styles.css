@@ -38,6 +38,7 @@ html {
   color: #fff;
   font-weight: 300;
   transition: all 0.2s ease;
+  letter-spacing: 10px;
 }
 
 .row-top h1 {

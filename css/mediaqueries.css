@@ -1,0 +1,26 @@
+/* From another project
+@media screen and (min-width: 1050px) {
+  .content {
+    margin-left: 18vw;
+    margin-right: 18vw;
+  }
+} */
+
+@media screen and (max-width: 650px) {
+  .row-top, .row-bottom {
+    opacity: 0;
+  }
+
+  #canvas {
+    height: 100vh;
+    top: 0;
+  }
+}
+
+/* From another project
+@media (max-resolution: 1dppx) {
+    .content {
+      font-size: 100%;
+    }
+}
+*/

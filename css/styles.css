@@ -25,6 +25,10 @@ html {
   transition: opacity 3.2s ease-in-out;
 }
 
+#logo-text img {
+  max-width: 65%;
+}
+
 .row-top {
   background-color: #0D0D0D;
 }
